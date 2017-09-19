@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="EstagioPU" transaction-type="RESOURCE_LOCAL">
+        <!--<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
+        <!--<class>br.ufms.estagio.entity.Discente</class>-->
+        <!--<class>br.ufms.estagio.entity.Estagio</class>-->
+        <!--<class>br.ufms.estagio.entity.AreaEstagio</class>-->
+        <!--<class>br.ufms.estagio.entity.PessoaJuridica</class>-->
+        <!--<class>br.ufms.estagio.entity.Usuario</class>-->
+        <!--<class>br.ufms.estagio.entity.Curso</class>-->
+        <!--<class>br.ufms.estagio.entity.Convenio</class>-->
+        <!--<class>br.ufms.estagio.entity.EnderecoEletronico</class>-->
+        <!--<class>br.ufms.estagio.entity.StatusEstagio</class>-->
+        <!--<class>br.ufms.estagio.entity.Docente</class>-->
+        <!--<class>br.ufms.estagio.entity.EstagioConcedente</class>-->
+        <!--<class>br.ufms.estagio.entity.Unidade</class>-->
+        <!--<class>br.ufms.estagio.entity.Seguro</class>-->
+        <!--<class>br.ufms.estagio.entity.Endereco</class>-->
+        <!--<class>br.ufms.estagio.entity.Telefone</class>-->
+        <!--<class>br.ufms.estagio.entity.Supervisor</class>-->
+        <!--<class>br.ufms.estagio.entity.Pessoa</class>-->
+        <!--<class>br.ufms.estagio.entity.FormacaoAcademica</class>-->
+        <!--<class>br.ufms.estagio.entity.TextoEstagio</class>-->
+        <!--<class>br.ufms.estagio.entity.HorarioEstagiario</class>-->
+        <!--<class>br.ufms.estagio.entity.Municipio</class>-->
+        <!--<class>br.ufms.estagio.entity.Concedente</class>-->
+        <!--<class>br.ufms.estagio.entity.RepresentanteLegal</class>-->
+        <!--<class>br.ufms.estagio.entity.PessoaFisica</class>-->
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/estagio"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
