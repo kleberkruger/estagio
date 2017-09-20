@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Concedente.findAll", query = "SELECT t FROM Concedente t")
     , @NamedQuery(name = "Concedente.findById", query = "SELECT t FROM Concedente t WHERE t.id = :id")
     , @NamedQuery(name = "Concedente.findByConveniado", query = "SELECT t FROM Concedente t WHERE t.conveniado = :conveniado")})
-public class Concedente<P extends Pessoa> implements Serializable {
+public class Concedente extends Entidade<Long> {
 
     private static final long serialVersionUID = 1L;
 
@@ -55,9 +55,9 @@ public class Concedente<P extends Pessoa> implements Serializable {
 
     @JoinColumn(name = "con_id", referencedColumnName = "p_id", insertable = false, updatable = false)
     @OneToOne(optional = false)
-    private P dados;
+    private Pessoa dados;
 
-    @JoinColumn(name = "con_id", referencedColumnName = "con_id")
+    @JoinColumn(name = "rep_id_representante_legal", referencedColumnName = "rep_id")
     @ManyToOne(optional = false)
     private RepresentanteLegal representanteLegal;
 
@@ -67,6 +67,7 @@ public class Concedente<P extends Pessoa> implements Serializable {
     /**
      * @return the id
      */
+    @Override
     public Long getId() {
         return id;
     }
@@ -79,16 +80,18 @@ public class Concedente<P extends Pessoa> implements Serializable {
     }
 
     /**
+     * @param <P>
      * @return the dados
      */
-    public P getDados() {
-        return dados;
+    public <P extends Pessoa> P getDados() {
+        return (P) dados;
     }
 
     /**
+     * @param <P>
      * @param dados the dados to set
      */
-    public void setDados(P dados) {
+    public <P extends Pessoa> void setDados(P dados) {
         this.dados = dados;
     }
 
