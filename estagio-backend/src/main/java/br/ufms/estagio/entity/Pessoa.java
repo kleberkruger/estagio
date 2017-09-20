@@ -35,6 +35,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -85,9 +86,11 @@ public class Pessoa extends Entidade<Long> {
     private Endereco endereco;
 
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OrderBy("tel_prioridade")
     private Collection<Telefone> telefones;
 
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OrderBy("endel_prioridade")
     private Collection<EnderecoEletronico> enderecosEletronicos;
 
     @Basic(optional = false)

@@ -28,6 +28,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -73,6 +74,7 @@ public class Supervisor extends Usuario {
     private Date aprovadoEm;
 
     @OneToMany(mappedBy = "supervisor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OrderBy("form_id")
     private Collection<FormacaoAcademica> formacoesAcademicas;
 
     public Supervisor() {

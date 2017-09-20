@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Classe que mapeia a entidade AreaEstagio.
- * 
+ *
  * @author Kleber Kruger
  */
 @Entity

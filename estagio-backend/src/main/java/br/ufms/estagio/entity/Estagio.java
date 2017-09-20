@@ -36,6 +36,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -136,6 +137,7 @@ public class Estagio extends Entidade<Long> {
     private Seguro seguro;
     
     @OneToMany(mappedBy = "estagio", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OrderBy("hor_id")
     private Collection<HorarioEstagiario> horarios;
 
     public Estagio() {

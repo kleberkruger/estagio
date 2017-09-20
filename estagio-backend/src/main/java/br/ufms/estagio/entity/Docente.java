@@ -17,7 +17,8 @@
 package br.ufms.estagio.entity;
 
 import java.time.LocalDate;
-import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -58,8 +59,15 @@ public class Docente extends Supervisor {
     @Temporal(TemporalType.DATE)
     private LocalDate dataIngresso;
 
-    @ManyToMany
-    private Collection<Curso> cursos;
+    @ManyToMany(mappedBy = "docentes")
+    private Set<Curso> cursos;
+
+    /**
+     * Cria um objeto Docente.
+     */
+    public Docente() {
+        cursos = new HashSet<>();
+    }
 
     /**
      * @return the siape
@@ -92,14 +100,14 @@ public class Docente extends Supervisor {
     /**
      * @return the cursos
      */
-    public Collection<Curso> getCursos() {
+    public Set<Curso> getCursos() {
         return cursos;
     }
 
     /**
      * @param cursos the cursos to set
      */
-    public void setCursos(Collection<Curso> cursos) {
+    public void setCursos(Set<Curso> cursos) {
         this.cursos = cursos;
     }
 

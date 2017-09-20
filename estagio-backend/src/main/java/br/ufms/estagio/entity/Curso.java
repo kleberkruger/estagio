@@ -18,14 +18,17 @@ package br.ufms.estagio.entity;
 
 import br.ufms.estagio.enumerate.ModalidadeCurso;
 import br.ufms.estagio.enumerate.Periodo;
-import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -34,6 +37,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Classe que mapeia a entidade Curso.
@@ -90,8 +94,15 @@ public class Curso extends Entidade<Short> {
     @Column(name = "cs_ativo")
     private Boolean ativo;
 
-    @ManyToMany
-    private Collection<AreaEstagio> areasEstagio;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "tb_curso_area_estagio", joinColumns = @JoinColumn(name = "cs_codigo"),
+            inverseJoinColumns = @JoinColumn(name = "ar_id"))
+    private Set<AreaEstagio> areasEstagio;
+    
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "tb_curso_docente", joinColumns = @JoinColumn(name = "cs_codigo"),
+            inverseJoinColumns = @JoinColumn(name = "doc_id"))
+    private Set<Docente> docentes;
 
     @JoinColumn(name = "doc_id_presidente_coe", referencedColumnName = "doc_id")
     @ManyToOne
@@ -104,6 +115,14 @@ public class Curso extends Entidade<Short> {
     @JoinColumn(name = "uni_id_unidade", referencedColumnName = "uni_id")
     @ManyToOne(optional = false)
     private Unidade unidade;
+
+    /**
+     * Cria um objeto Curso.
+     */
+    public Curso() {
+        this.docentes = new HashSet<>();
+        this.areasEstagio = new HashSet<>();
+    }
 
     @Override
     public Short getId() {
@@ -195,20 +214,6 @@ public class Curso extends Entidade<Short> {
     }
 
     /**
-     * @return the areasEstagio
-     */
-    public Collection<AreaEstagio> getAreasEstagio() {
-        return areasEstagio;
-    }
-
-    /**
-     * @param areasEstagio the areasEstagio to set
-     */
-    public void setAreasEstagio(Collection<AreaEstagio> areasEstagio) {
-        this.areasEstagio = areasEstagio;
-    }
-
-    /**
      * @return the presidenteCoe
      */
     public Docente getPresidenteCoe() {
@@ -248,6 +253,35 @@ public class Curso extends Entidade<Short> {
      */
     public void setUnidade(Unidade unidade) {
         this.unidade = unidade;
+    }
+    
+    /**
+     * @return the docentes
+     */
+    @XmlTransient
+    public Set<Docente> getDocentes() {
+        return docentes;
+    }
+
+    /**
+     * @param docentes the docentes to set
+     */
+    public void setDocentes(Set<Docente> docentes) {
+        this.docentes = docentes;
+    }
+
+    /**
+     * @return the areasEstagio
+     */
+    public Set<AreaEstagio> getAreasEstagio() {
+        return areasEstagio;
+    }
+
+    /**
+     * @param areasEstagio the areasEstagio to set
+     */
+    public void setAreasEstagio(Set<AreaEstagio> areasEstagio) {
+        this.areasEstagio = areasEstagio;
     }
 
     @Override

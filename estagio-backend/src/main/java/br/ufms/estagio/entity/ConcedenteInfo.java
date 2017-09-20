@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author Kleber Kruger
  */
-@Entity
+@Entity(name = "ConcedenteInfo")
 @Table(name = "tb_estagio_concedente")
 @XmlRootElement
 @NamedQueries({

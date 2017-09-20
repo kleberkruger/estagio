@@ -22,6 +22,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
@@ -57,7 +58,7 @@ public class Concedente<P extends Pessoa> implements Serializable {
     private P dados;
 
     @JoinColumn(name = "con_id", referencedColumnName = "con_id")
-    @OneToOne(optional = false)
+    @ManyToOne(optional = false)
     private RepresentanteLegal representanteLegal;
 
     @Column(name = "con_conveniado")
