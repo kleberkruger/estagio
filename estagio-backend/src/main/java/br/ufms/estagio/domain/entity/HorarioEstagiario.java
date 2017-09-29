@@ -18,6 +18,7 @@ package br.ufms.estagio.domain.entity;
 
 import br.ufms.estagio.domain.enumerate.Atividade;
 import br.ufms.springbootlib.domain.GenericEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.DayOfWeek;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -166,6 +167,7 @@ public class HorarioEstagiario extends GenericEntity<Long> {
     /**
      * @return the estagio
      */
+    @JsonIgnore
     public Estagio getEstagio() {
         return estagio;
     }

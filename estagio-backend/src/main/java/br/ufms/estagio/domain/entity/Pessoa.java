@@ -18,6 +18,7 @@ package br.ufms.estagio.domain.entity;
 
 import br.ufms.estagio.domain.enumerate.TipoPessoa;
 import br.ufms.springbootlib.domain.GenericEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
@@ -165,6 +166,7 @@ public abstract class Pessoa extends GenericEntity<Long> {
     /**
      * @return the endereco
      */
+    @JsonIgnore
     public Endereco getEndereco() {
         return endereco;
     }
@@ -179,6 +181,7 @@ public abstract class Pessoa extends GenericEntity<Long> {
     /**
      * @return the telefones
      */
+    @JsonIgnore
     public Collection<Telefone> getTelefones() {
         return telefones;
     }
@@ -193,6 +196,7 @@ public abstract class Pessoa extends GenericEntity<Long> {
     /**
      * @return the enderecosEletronicos
      */
+    @JsonIgnore
     public Collection<EnderecoEletronico> getEnderecosEletronicos() {
         return enderecosEletronicos;
     }

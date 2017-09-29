@@ -19,6 +19,7 @@ package br.ufms.estagio.domain.entity;
 import br.ufms.estagio.domain.enumerate.ModalidadeCurso;
 import br.ufms.estagio.domain.enumerate.Periodo;
 import br.ufms.springbootlib.domain.GenericEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Basic;
@@ -217,6 +218,7 @@ public class Curso extends GenericEntity<Short> {
     /**
      * @return the presidenteCoe
      */
+    @JsonIgnore
     public Docente getPresidenteCoe() {
         return presidenteCoe;
     }
@@ -231,6 +233,7 @@ public class Curso extends GenericEntity<Short> {
     /**
      * @return the coordenador
      */
+    @JsonIgnore
     public Docente getCoordenador() {
         return coordenador;
     }
@@ -245,6 +248,7 @@ public class Curso extends GenericEntity<Short> {
     /**
      * @return the unidade
      */
+    @JsonIgnore
     public Unidade getUnidade() {
         return unidade;
     }
@@ -259,7 +263,7 @@ public class Curso extends GenericEntity<Short> {
     /**
      * @return the docentes
      */
-    @XmlTransient
+    @JsonIgnore
     public Set<Docente> getDocentes() {
         return docentes;
     }
@@ -274,6 +278,7 @@ public class Curso extends GenericEntity<Short> {
     /**
      * @return the areasEstagio
      */
+    @JsonIgnore
     public Set<AreaEstagio> getAreasEstagio() {
         return areasEstagio;
     }

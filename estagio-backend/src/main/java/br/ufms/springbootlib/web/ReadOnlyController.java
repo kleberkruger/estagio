@@ -16,7 +16,6 @@
  */
 package br.ufms.springbootlib.web;
 
-import br.ufms.estagio.Application;
 import br.ufms.estagio.domain.entity.Concedente;
 import br.ufms.estagio.domain.entity.PessoaJuridica;
 import br.ufms.springbootlib.domain.GenericEntity;
@@ -53,9 +52,8 @@ public class ReadOnlyController<E extends GenericEntity<ID>, ID extends Serializ
         E e = service.findOne(id);
         LOG.info(e != null ? e.toString() : "Inexistente");
         LOG.info("-------------------------------\n");
-        return null;
         
-//        return getService().findOne(id);
+        return getService().findOne(id);
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -70,9 +68,8 @@ public class ReadOnlyController<E extends GenericEntity<ID>, ID extends Serializ
             LOG.info(entity.toString());
         });
         LOG.info("-------------------------------\n");
-        return null;
 
-//        return getService().findAll();
+        return getService().findAll();
     }
 
     /**

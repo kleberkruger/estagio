@@ -18,6 +18,7 @@ package br.ufms.estagio.domain.entity;
 
 import br.ufms.estagio.domain.enumerate.GrauAcademico;
 import br.ufms.springbootlib.domain.GenericEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;

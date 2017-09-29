@@ -2,6 +2,7 @@
 /Users/kleberkruger/Nuvem/Box Sync/SourceCode/git/GitHub/Estagio/estagio-backend/src/main/java/br/ufms/estagio/domain/entity/RepresentanteLegal.java
 /Users/kleberkruger/Nuvem/Box Sync/SourceCode/git/GitHub/Estagio/estagio-backend/src/main/java/br/ufms/estagio/domain/entity/Telefone.java
 /Users/kleberkruger/Nuvem/Box Sync/SourceCode/git/GitHub/Estagio/estagio-backend/src/main/java/br/ufms/estagio/domain/repository/FormacaoAcademicaRepository.java
+/Users/kleberkruger/Nuvem/Box Sync/SourceCode/git/GitHub/Estagio/estagio-backend/src/main/java/br/ufms/estagio/web/AreaEstagioController.java
 /Users/kleberkruger/Nuvem/Box Sync/SourceCode/git/GitHub/Estagio/estagio-backend/src/main/java/br/ufms/estagio/domain/repository/ConcedenteRepository.java
 /Users/kleberkruger/Nuvem/Box Sync/SourceCode/git/GitHub/Estagio/estagio-backend/src/main/java/br/ufms/estagio/domain/repository/DiscenteRepository.java
 /Users/kleberkruger/Nuvem/Box Sync/SourceCode/git/GitHub/Estagio/estagio-backend/src/main/java/br/ufms/estagio/domain/entity/Municipio.java

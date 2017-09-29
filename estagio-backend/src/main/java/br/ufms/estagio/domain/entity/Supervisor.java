@@ -16,6 +16,7 @@
  */
 package br.ufms.estagio.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
@@ -23,7 +24,6 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.NamedQueries;
@@ -143,6 +143,7 @@ public class Supervisor extends Usuario {
     /**
      * @return the formacoesAcademicas
      */
+    @JsonIgnore
     public Collection<FormacaoAcademica> getFormacoesAcademicas() {
         return formacoesAcademicas;
     }

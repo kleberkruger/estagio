@@ -16,6 +16,7 @@
  */
 package br.ufms.estagio.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -81,6 +82,7 @@ public class Discente extends Usuario {
     /**
      * @return the curso
      */
+    @JsonIgnore
     public Curso getCurso() {
         return curso;
     }

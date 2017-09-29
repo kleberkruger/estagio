@@ -17,9 +17,9 @@
 package br.ufms.estagio.domain.entity;
 
 import br.ufms.springbootlib.domain.GenericEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -143,6 +143,7 @@ public class Convenio extends GenericEntity<Long> {
     /**
      * @return the concedente
      */
+    @JsonIgnore
     public Concedente getConcedente() {
         return concedente;
     }

@@ -19,6 +19,7 @@ package br.ufms.estagio.domain.entity;
 import br.ufms.estagio.domain.enumerate.ModalidadeEstagio;
 import br.ufms.estagio.domain.enumerate.ModalidadeOrientacao;
 import br.ufms.springbootlib.domain.GenericEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
@@ -245,6 +246,7 @@ public class Estagio extends GenericEntity<Long> {
     /**
      * @return the area
      */
+    @JsonIgnore
     public AreaEstagio getArea() {
         return area;
     }
@@ -259,6 +261,7 @@ public class Estagio extends GenericEntity<Long> {
     /**
      * @return the estagiario
      */
+    @JsonIgnore
     public Discente getEstagiario() {
         return estagiario;
     }
@@ -273,6 +276,7 @@ public class Estagio extends GenericEntity<Long> {
     /**
      * @return the orientador
      */
+    @JsonIgnore
     public Docente getOrientador() {
         return orientador;
     }
@@ -287,6 +291,7 @@ public class Estagio extends GenericEntity<Long> {
     /**
      * @return the supervisor
      */
+    @JsonIgnore
     public Supervisor getSupervisor() {
         return supervisor;
     }
@@ -301,6 +306,7 @@ public class Estagio extends GenericEntity<Long> {
     /**
      * @return the concedente
      */
+    @JsonIgnore
     public ConcedenteInfo getConcedente() {
         return concedente;
     }
@@ -315,6 +321,7 @@ public class Estagio extends GenericEntity<Long> {
     /**
      * @return the texto
      */
+    @JsonIgnore
     public TextoEstagio getTexto() {
         return texto;
     }
@@ -329,6 +336,7 @@ public class Estagio extends GenericEntity<Long> {
     /**
      * @return the status
      */
+    @JsonIgnore
     public StatusEstagio getStatus() {
         return status;
     }
@@ -343,6 +351,7 @@ public class Estagio extends GenericEntity<Long> {
     /**
      * @return the seguro
      */
+    @JsonIgnore
     public Seguro getSeguro() {
         return seguro;
     }
@@ -357,6 +366,7 @@ public class Estagio extends GenericEntity<Long> {
     /**
      * @return the horarios
      */
+    @JsonIgnore
     public Collection<HorarioEstagiario> getHorarios() {
         return horarios;
     }

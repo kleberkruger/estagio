@@ -16,6 +16,7 @@
  */
 package br.ufms.estagio.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -96,6 +97,7 @@ public class Unidade extends PessoaJuridica {
     /**
      * @return the responsavel
      */
+    @JsonIgnore
     public Docente getResponsavel() {
         return responsavel;
     }

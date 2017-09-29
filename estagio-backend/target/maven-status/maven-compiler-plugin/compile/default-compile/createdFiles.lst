@@ -76,6 +76,7 @@ br/ufms/estagio/web/UsuarioController.class
 br/ufms/estagio/domain/enumerate/ModalidadeCurso.class
 br/ufms/estagio/web/CursoController.class
 br/ufms/estagio/service/SupervisorService.class
+br/ufms/estagio/web/AreaEstagioController.class
 br/ufms/estagio/service/CursoService.class
 br/ufms/estagio/domain/enumerate/TipoUsuario$1.class
 br/ufms/estagio/domain/entity/Supervisor.class

@@ -17,6 +17,7 @@
 package br.ufms.estagio.domain.entity;
 
 import br.ufms.springbootlib.domain.GenericEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -163,6 +164,7 @@ public class TextoEstagio extends GenericEntity<Long> {
     /**
      * @return the estagio
      */
+    @JsonIgnore
     public Estagio getEstagio() {
         return estagio;
     }

@@ -16,6 +16,7 @@
  */
 package br.ufms.estagio.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -125,6 +126,7 @@ public class Docente extends Supervisor {
     /**
      * @return the cursos
      */
+    @JsonIgnore
     public Set<Curso> getCursos() {
         return cursos;
     }
