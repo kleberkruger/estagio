@@ -5,6 +5,8 @@
 -- Project: Name of the project
 -- Author: Supervisor
 
+DROP SCHEMA `estagio`;
+
 CREATE SCHEMA `estagio` DEFAULT CHARACTER SET utf8;
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
@@ -357,9 +359,9 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `estagio`.`tb_horario_estagiario` (
-  `hor_id` INT(11) NOT NULL,
+  `hor_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `est_id_estagio` INT(10) UNSIGNED NOT NULL,
-  `hor_dia_semana` ENUM('SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB') NOT NULL,
+  `hor_dia_semana` ENUM('2', '3', '4', '5', '6', '7') NOT NULL,
   `hor_inicio` TIME NOT NULL,
   `hor_termino` TIME NOT NULL,
   `hor_atividade` ENUM('AULA', 'ESTAGIO') NOT NULL,
@@ -478,7 +480,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `estagio`.`tb_convenio` (
-  `conv_id` INT(11) NOT NULL,
+  `conv_id` INT(10) NOT NULL,
   `conv_numero` VARCHAR(32) NOT NULL,
   `conv_data_inicio` DATE NOT NULL,
   `conv_data_termino` DATE NOT NULL,

@@ -1,0 +1,13 @@
+<div class="container">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Passaporte UFMS ou CPF" [(ngModel)]="passaporteCpf" />
+    <button mat-button *ngIf="passaporteCpf" matSuffix mat-icon-button aria-label="Clear" (click)="passaporteCpf=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput placeholder="Senha" [type]="esconderSenha ? 'password' : 'text'">
+    <mat-icon matSuffix (click)="esconderSenha = !esconderSenha">{{esconderSenha ? 'visibility' : 'visibility_off'}}</mat-icon>
+  </mat-form-field>
+</div>

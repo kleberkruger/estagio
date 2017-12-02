@@ -36,8 +36,8 @@ public abstract class GenericEntity<T extends Serializable> implements Serializa
 
     /**
      * Indica quando outro objeto é igual a este. Nesta implementação, qualquer objeto derivado de
-     * Bean é igual a este desde que seja exatamente da mesma classe e tenha o mesmo ID. Caso
-     * precise de outra lógica, sobrescreva este método.
+     * GenericEntity é igual a este desde que seja exatamente da mesma classe e tenha o mesmo ID.
+     * Caso precise de outra lógica, sobrescreva este método.
      *
      * @param obj o objeto a comparar com este
      * @return {@code true} se este objeto é igual ao do argumento; {@code false} caso contrário.

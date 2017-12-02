@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "uso": "Pessoal",
+        "contato": null,
+        "numero": "67998836289",
+        "ramal": null,
+        "operadora": "Vivo",
+        "isWhatsApp": true,
+        "prioridade": 0
+    },
+    {
+        "id": 2,
+        "uso": "Pessoal",
+        "contato": null,
+        "numero": "6732911828",
+        "ramal": null,
+        "operadora": "Oi",
+        "isWhatsApp": null,
+        "prioridade": 1
+    },
+    {
+        "id": 3,
+        "uso": "Trabalho",
+        "contato": null,
+        "numero": "6732910200",
+        "ramal": 201,
+        "operadora": null,
+        "isWhatsApp": null,
+        "prioridade": 2
+    },
+    {
+        "id": 4,
+        "uso": "Recado",
+        "contato": "Ekler",
+        "numero": "67999999907",
+        "ramal": null,
+        "operadora": "Vivo",
+        "isWhatsApp": true,
+        "prioridade": 3
+    }
+]
