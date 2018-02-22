@@ -19,7 +19,7 @@ import 'rxjs/add/operator/map';
 export class TelefoneFormComponent implements OnInit {
 
   @Input()
-  telefone: Telefone;
+  private telefone: Telefone;
 
   private editando: boolean;
 
@@ -28,7 +28,7 @@ export class TelefoneFormComponent implements OnInit {
 
   private formControl: FormControl = new FormControl();
 
-  private operadoras = ['Claro', 'Oi', 'TIM', 'Vivo'];
+  private operadoras = ['Algar Telecom', 'Claro', 'Nextel', 'Oi', 'Porto Seguro Conecta', 'TIM', 'Vivo'];
   private operadorasFiltradas: Observable<string[]>;
 
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
@@ -54,11 +54,11 @@ export class TelefoneFormComponent implements OnInit {
 
   private isCelular(): boolean {
     var numeroStr: string = this.telefone.numero.replace(/[^0-9]/g, '');
-    return (numeroStr.length == 11 && numeroStr[2] == '9');
+    return numeroStr[2] == '9';
   }
 
   private isRecado(): boolean {
-    return this.telefone.uso === 'Recado';
+    return this.telefone.uso.toString() === 'Recado';
   }
 
   private setEditar(b: boolean) {
@@ -66,8 +66,7 @@ export class TelefoneFormComponent implements OnInit {
     if (this.editando) {
       this.usoControl.enable();
       this.formControl.enable();
-    }
-    else {
+    } else {
       this.usoControl.disable();
       this.formControl.disable();
     }

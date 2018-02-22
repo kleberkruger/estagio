@@ -1,67 +1,108 @@
+/**
+ * Enum que define o tipo de uso do telefone.
+ */
 export enum UsoTelefone {
-    Pessoal, 
-    Trabalho, 
-    Recado
+  Pessoal, Trabalho, Ramal, Recado
 }
 
+/**
+ * Classe que define os atributos de um objeto Telefone.
+ */
 export class Telefone {
 
-    private _id: number;
-    // private _uso: UsoTelefone;
-    private _uso: string;
-    private _contato: string;
-    private _numero: string;
-    private _ramal: string;
-    private _operadora: string;
-    private _isWhatsApp: boolean;
-    private _prioridade: number;
+  // Quando nulo, este telefone não existe na base de dados.
+  private _id: number;
 
-    public isCelular(): boolean {
-        return (this.numero.length == 11 && this.numero[0] == '9');
-    }
+  // Tipo de uso deste telefone.
+  private _uso: UsoTelefone;
 
-    public isValido(): boolean {
-        return true;
-    }
+  // Caso seja um telefone para recados, qual o nome do contato.
+  private _contato: string;
 
-    get id(): number { return this._id; }
-    set id(id: number) { this._id = id; }
+  // Número do telefone.
+  private _numero: string;
 
-    // get uso(): UsoTelefone { return this._uso; }
-    // set uso(uso: UsoTelefone) { this._uso = uso; }
+  // Ramal (apenas em caso de telefone fixo)
+  private _ramal: string;
 
-    // get contato(): string { return this.uso == UsoTelefone.Recado ? this._contato : null; }
-    // set contato(contato: string) { this._contato = contato; }
+  // Operadora (apenas em caso de celular)
+  private _operadora: string;
 
-    get uso(): string { return this._uso; }
-    set uso(uso: string) { this._uso = uso; }
+  // Verdadeira caso tenha WhatsApp.
+  private _isWhatsApp: boolean;
 
-    get contato(): string { return this.uso === 'Recado' ? this._contato : null; }
-    set contato(contato: string) { this._contato = contato; }
+  // Ordem de prioridade deste telefone.
+  private _prioridade: number;
 
-    get numero(): string { return this._numero; }
-    set numero(numero: string) { this._numero = numero; }
+  public isCelular(): boolean {
+    return this.numero[2] == '9';
+  }
 
-    get ramal(): string { return !this.isCelular() ? this._ramal : null; }
-    set ramal(ramal: string) { this._ramal = ramal; }
+  public isValido(): boolean {
+    return true;
+  }
 
-    get operadora(): string { return this._operadora; }
-    set operadora(operadora: string) { this._operadora = operadora; }
+  get id(): number {
+    return this._id;
+  }
 
-    get isWhatsApp(): boolean { return this.isCelular() ? this._isWhatsApp : false; }
-    set isWhatsApp(isWhatsApp: boolean) { this._isWhatsApp = isWhatsApp; }
+  set id(id: number) {
+    this._id = id;
+  }
 
-    get prioridade(): number { return this._prioridade; }
-    set prioridade(prioridade: number) { this._prioridade = prioridade; }
+  get uso(): UsoTelefone {
+    return this._uso;
+  }
+
+  set uso(uso: UsoTelefone) {
+    this._uso = uso;
+  }
+
+  get contato(): string {
+    return this.uso.toString() === 'Recado' ? this._contato : null;
+  }
+
+  set contato(contato: string) {
+    this._contato = contato;
+  }
+
+  get numero(): string {
+    return this._numero;
+  }
+
+  set numero(numero: string) {
+    this._numero = numero;
+  }
+
+  get ramal(): string {
+    return !this.isCelular() ? this._ramal : null;
+  }
+
+  set ramal(ramal: string) {
+    this._ramal = ramal;
+  }
+
+  get operadora(): string {
+    return this.isCelular() ? this._operadora : null;
+  }
+
+  set operadora(operadora: string) {
+    this._operadora = operadora;
+  }
+
+  get isWhatsApp(): boolean {
+    return this.isCelular() ? this._isWhatsApp : false;
+  }
+
+  set isWhatsApp(isWhatsApp: boolean) {
+    this._isWhatsApp = isWhatsApp;
+  }
+
+  get prioridade(): number {
+    return this._prioridade;
+  }
+
+  set prioridade(prioridade: number) {
+    this._prioridade = prioridade;
+  }
 }
-
-// export interface Telefone {
-//     id: number;
-//     uso: string;
-//     contato: string;
-//     numero: string;
-//     ramal: string;
-//     operadora: string;
-//     isWhatsApp: boolean;
-//     prioridade: number;
-// }

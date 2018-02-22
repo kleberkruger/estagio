@@ -63,7 +63,12 @@ export class TelefonesComponent implements OnInit {
       .subscribe(x => this.telefones = x);
   }
 
-  getTelefones(): Observable<Telefone[]> {
+  private adicionar() {
+    var t: Telefone = new Telefone();
+    this.telefones.push(t);
+  }
+
+  private getTelefones(): Observable<Telefone[]> {
     const url = 'assets/mock-telefones.json';
     return this._http.get(url)
       .map(x => x.json());

@@ -16,6 +16,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TelefonesComponent } from './telefones/telefones.component';
 import { TelefoneFormComponent } from './telefones/telefone-form/telefone-form.component';
 import { DemoGridColumnSpanComponent } from './demo-grid-column-span/demo-grid-column-span.component';
+import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
+import { SlidenavComponent } from './slidenav/slidenav.component';
+import { EnderecoFormComponent } from './endereco-form/endereco-form.component';
 
 @NgModule({
   declarations: [ 
@@ -24,7 +27,7 @@ import { DemoGridColumnSpanComponent } from './demo-grid-column-span/demo-grid-c
     PageNotFoundComponent, 
     TelefonesComponent, 
     TelefoneFormComponent, 
-    DemoGridColumnSpanComponent
+    DemoGridColumnSpanComponent, MeuPerfilComponent, SlidenavComponent, EnderecoFormComponent
   ],
   imports: [
     BrowserModule,
